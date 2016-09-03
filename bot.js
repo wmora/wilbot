@@ -1,12 +1,18 @@
 'use strict'
 
-const express = require('express')
-const app = express()
+var express = require('express')
+var app = express()
+
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN || ''
 
 app.set('port', (process.env.PORT || 5000))
 
 app.get('/webhook', function(request, response) {
-  response.send("pong")
+  if (request.query['hub.verify_token'] === VERIFY_TOKEN) {
+    response.send(request.query['hub.challenge'])
+  } else {
+    response.send('Error, wrong validation token')
+  }
 })
 
 app.listen(app.get('port'), function() {
