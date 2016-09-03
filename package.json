@@ -1,0 +1,28 @@
+{
+  "name": "wilbot",
+  "version": "1.0.0",
+  "description": "William Mora's personal bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmora/wilbot.git"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "keywords": [
+    "bot",
+    "facebook",
+    "messenger"
+  ],
+  "author": "William Mora",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wmora/wilbot/issues"
+  },
+  "homepage": "https://github.com/wmora/wilbot#readme"
+}
