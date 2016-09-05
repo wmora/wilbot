@@ -1,7 +1,6 @@
 'use strict'
 
-const https = require('https'),
-      querystring = require('querystring')
+const https = require('https')
 
 const settings = {
     hostname: 'graph.facebook.com',
