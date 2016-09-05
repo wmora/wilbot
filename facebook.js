@@ -36,7 +36,7 @@ exports.getUserInfo = function(userId, fields, callback) {
 }
 
 exports.sendMessage = function(message, callback) {
-  let body = querystring.stringify(message)
+  let body = JSON.stringify(message)
   console.log(`sending message with body ${body}`)
   let options = {
     hostname: settings.hostname,
