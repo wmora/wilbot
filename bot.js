@@ -1,9 +1,9 @@
 'use strict'
 
-var express = require('express'),
+const express = require('express'),
   validator = require('./validator.js'),
   postback = require('./postback.js')
-var app = express()
+const app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -19,8 +19,6 @@ app.post('/webhook', function(request, response) {
   const body = request.body
   if (body.object === 'page') {
     for (let entry of body.entry) {
-      var id = entry.id
-      var time = entry.time
       for (let event of entry.messaging) {
         if (event.postback) {
           postback.handle(event)
