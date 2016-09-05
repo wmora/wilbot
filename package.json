@@ -12,7 +12,8 @@
     "url": "git+https://github.com/wmora/wilbot.git"
   },
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "body-parser": "1.15.2"
   },
   "devDependencies": {
     "mocha": "2.4.x",

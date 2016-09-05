@@ -1,13 +1,15 @@
 'use strict'
 
 const express = require('express'),
+  bodyParser = require('body-parser'),
   validator = require('./validator.js'),
   postback = require('./postback.js')
 const app = express()
 
+app.use(bodyParser.json())
 app.set('port', (process.env.PORT || 5000))
 
-app.get('/webhook', validator.validateWebhook)
+app.get('/fb/webhook', validator.validateWebhook)
 
 /*
  *  It is extremely important to return a 200 OK HTTP as fast as possible.
@@ -15,9 +17,10 @@ app.get('/webhook', validator.validateWebhook)
  *  volume bots, a delay in returning a 200 can cause significant delays in
  *  Facebook delivering messages to your webhook.
  */
-app.post('/webhook', function(request, response) {
-  const body = request.body
-  if (body.object === 'page') {
+app.post('/fb/webhook', function(request, response) {
+  let body = request.body
+
+  if (body && body.object === 'page' && body.entry) {
     for (let entry of body.entry) {
       for (let event of entry.messaging) {
         if (event.postback) {
@@ -25,7 +28,9 @@ app.post('/webhook', function(request, response) {
         }
       }
     }
-    response.send(200)
+    response.sendStatus(200)
+  } else {
+    response.sendStatus(400)
   }
 })
 
