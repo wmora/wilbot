@@ -5,7 +5,7 @@ const education = [
     text: 'I graduated from Florida International University with a Bachelor\'s Degree in Computer Engineering'
   },
   {
-    text: 'I strongly believe that we can never stop learning, that\'s why I constantly read books on technology, startups, and self-improvement 🤓'
+    text: 'I strongly believe that we should never stop learning, that\'s why I constantly read books on technology, startups, and self-improvement 🤓'
   },
   {
     attachment: {
