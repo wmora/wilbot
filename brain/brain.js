@@ -53,6 +53,25 @@ const home = [
           },
           {
             type: 'postback',
+            title: 'More',
+            payload: 'home_2'
+          }
+        ]
+      }
+    }
+  }
+]
+
+const home2 = [
+  {
+    attachment: {
+      type: 'template',
+      payload: {
+        template_type: 'button',
+        text: 'What would you like to know about me?',
+        buttons: [
+          {
+            type: 'postback',
             title: 'Personal life',
             payload: 'personal_life'
           },
@@ -70,6 +89,7 @@ const home = [
 exports.messages = {
   get_started: getStarted,
   home: home,
+  home_2: home2,
   work: work.messages['work'],
   work_2: work.messages['work_2'],
   work_3: work.messages['work_3'],
