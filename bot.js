@@ -9,7 +9,7 @@ const app = express()
 app.use(bodyParser.json())
 app.set('port', (process.env.PORT || 5000))
 
-app.get('/fb/webhook', validator.validateWebhook)
+app.get('/webhook', validator.validateWebhook)
 
 /*
  *  It is extremely important to return a 200 OK HTTP as fast as possible.
@@ -17,7 +17,7 @@ app.get('/fb/webhook', validator.validateWebhook)
  *  volume bots, a delay in returning a 200 can cause significant delays in
  *  Facebook delivering messages to your webhook.
  */
-app.post('/fb/webhook', function(request, response) {
+app.post('/webhook', function(request, response) {
   let body = request.body
 
   if (body && body.object === 'page' && body.entry) {
