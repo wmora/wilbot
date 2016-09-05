@@ -1,3 +1,5 @@
+'use strict'
+
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN || ''
 
 exports.validateWebhook = function (request, response) {
