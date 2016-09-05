@@ -2,17 +2,14 @@
 
 const personalLife = [
   {
-    text: 'I was born in Maracaibo, 🇻🇪 but moved to Caracas soon after'
-  },
-  {
-    text: 'at 14, I moved with my family to Weston, 🇺🇸 where I went to high school and college'
+    text: 'I was born in Maracaibo 🇻🇪 but moved to Caracas 🇻🇪 soon after'
   },
   {
     attachment: {
       type: 'template',
       payload: {
         template_type: 'button',
-        text: 'If you like to talk about any of those topics or even recommend me a book, feel free to drop me a message 😃',
+        text: 'at 14, I moved with my family to Weston 🇺🇸 where I went to high school and college',
         buttons: [
           {
             type: 'postback',
