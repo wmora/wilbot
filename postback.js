@@ -16,7 +16,6 @@ function handlePayload(event, messages) {
 
   if (message !== undefined) {
     sendMessage(event, message, () => {
-      console.log('done, sending another one...')
       handlePayload(event, messages)
     })
   }
