@@ -8,14 +8,14 @@ const settings = {
     base_path: '/v2.6/'
 }
 
-const verify_token = process.env.VERIFY_TOKEN || ''
+const access_token = process.env.PAGE_ACCESS_TOKEN || ''
 
-exports.verify_token
+exports.verify_token = process.env.VERIFY_TOKEN || ''
 
 exports.getUserInfo = function(userId, fields, callback) {
   let options = {
     hostname: settings.hostname,
-    path: `${settings.base_path}${userId}?fields=${fields.join('&')}&access_token=${verify_token}`
+    path: `${settings.base_path}${userId}?fields=${fields.join('&')}&access_token=${access_token}`
   }
   let request = https.request(options, (response) => {
     if (response.statusCode >= 400 && response.statusCode <= 599) {
@@ -38,7 +38,7 @@ exports.sendMessage = function(message, callback) {
   let body = querystring.stringify(message)
   let options = {
     hostname: settings.hostname,
-    path: `/v2.6/me/messages?access_token=${verify_token}`,
+    path: `/v2.6/me/messages?access_token=${access_token}`,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
