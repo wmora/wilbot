@@ -19,7 +19,7 @@ const contact = [
           {
             type: 'web_url',
             title: 'Twitter',
-            payload: 'https://twitter.com/_williammora'
+            url: 'https://twitter.com/_williammora'
           },
           {
             type: 'postback',
@@ -43,12 +43,12 @@ const contact2 = [
           {
             type: 'web_url',
             title: 'GitHub',
-            payload: 'https://github.com/wmora'
+            url: 'https://github.com/wmora'
           },
           {
             type: 'web_url',
             title: 'LinkedIn',
-            payload: 'https://www.linkedin.com/in/williammora'
+            url: 'https://www.linkedin.com/in/williammora'
           },
           {
             type: 'postback',
@@ -72,7 +72,7 @@ const contact3 = [
           {
             type: 'web_url',
             title: 'Medium',
-            payload: 'https://medium.com/@wmora'
+            url: 'https://medium.com/@wmora'
           },
           {
             type: 'postback',
