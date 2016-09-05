@@ -87,6 +87,6 @@ const contact3 = [
 
 exports.messages = {
   contact: contact,
-  contact2: contact2,
-  contact3: contact3
+  contact_2: contact2,
+  contact_3: contact3
 }
