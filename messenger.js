@@ -29,8 +29,6 @@ function getMessageText(recipient, message, callback) {
   if (message.required_user_fields) {
     facebook.getUserInfo(recipient.id, message.required_user_fields, (user) => {
       for (let user_field of message.required_user_fields) {
-        console.log(`received ${user}`)
-        console.log(`replacing ${user_field} with ${user[user_field]}`)
         let placeholder = ' ##' + user_field + '##'
         let replace = new RegExp(placeholder, 'g');
         let replaceText = user[user_field] !== undefined ? ` ${user[user_field]}` : ''
