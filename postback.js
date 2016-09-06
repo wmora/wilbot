@@ -49,7 +49,7 @@ function getMessageText(event, message, callback) {
       for (let user_field of message.required_user_fields) {
         let placeholder = '${' + user_field + '}'
         let replace = new RegExp(placeholder, 'g');
-        message.text.replace(replace, user[user_field])
+        message.text = message.text.replace(replace, user[user_field])
         callback(message.text)
       }
     })
