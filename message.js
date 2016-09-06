@@ -4,7 +4,7 @@ const postback = require('./postback.js'),
       brain = require('./brain/brain.js')
 
 exports.handle = function(event) {
-  if (event.message.text && ['home', '🏠'].includes(event.message.text.toLowerCase())) {
+  if (event.message.text && ['home', '🏠'].indexOf(event.message.text.toLowerCase()) > -1) {
     event.postback = {
       payload: 'home'
     }
