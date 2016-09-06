@@ -2,10 +2,7 @@
 
 const work = [
   {
-    text: 'I\'ve been a Software Engineer for a long time and have worked with many technologies and languages'
-  },
-  {
-    text: 'most recently, I\'ve been working in mobile and web applications'
+    text: 'I am a Software Engineer who has worked with many technologies and languages. Most recently, I\'ve been working in mobile and web applications'
   },
   {
     attachment: {
