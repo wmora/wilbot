@@ -101,3 +101,5 @@ exports.messages = {
   personal_life_3: personalLife.messages['personal_life_3'],
   contact: contact.messages['contact']
 }
+
+exports.fallback_message = 'Sorry, I don\'t understand that, I\'m still learning 👶. If you are stuck, you can always start over by typing \'home\' or 🏠'

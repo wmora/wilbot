@@ -23,21 +23,12 @@ function handlePayload(event, messages) {
 }
 
 function sendMessage(event, message, callback) {
-  sendTypingOn(event, message, () => {
+  senderActions.sendTypingOn(event, message, () => {
     if (message.text) {
       sendTextMessage(event, message, callback)
     } else if (message.attachment) {
       sendAttachmentMessage(event, message, callback)
     }
-  })
-}
-
-function sendTypingOn(event, message, callback) {
-  let text = message.text ? message.text : message.attachment.payload.text
-  senderActions.typingOn(event.sender.id, () => {
-    let millisPerWord = (60 * 1000) / 450
-    let delay = text.split(' ').length * millisPerWord
-    setTimeout(callback, delay)
   })
 }
 

@@ -12,7 +12,16 @@ exports.markAsSeen = function(recipientId, callback) {
   facebook.sendMessage(body, callback)
 }
 
-exports.typingOn = function(recipientId, callback) {
+exports.sendTypingOn = function(event, message, callback) {
+  let text = message.text ? message.text : message.attachment.payload.text
+  senderActions.typingOn(event.sender.id, () => {
+    let millisPerWord = (60 * 1000) / 450
+    let delay = text.split(' ').length * millisPerWord
+    setTimeout(callback, delay)
+  })
+}
+
+function typingOn(recipientId, callback) {
   let body = {
     recipient: {
       id: recipientId
