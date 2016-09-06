@@ -99,7 +99,5 @@ exports.messages = {
   personal_life: personalLife.messages['personal_life'],
   personal_life_2: personalLife.messages['personal_life_2'],
   personal_life_3: personalLife.messages['personal_life_3'],
-  contact: contact.messages['contact'],
-  contact_2: contact.messages['contact_2'],
-  contact_3: contact.messages['contact_3']
+  contact: contact.messages['contact']
 }
