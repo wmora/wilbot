@@ -14,7 +14,7 @@ exports.markAsSeen = function(recipientId, callback) {
 
 exports.sendTypingOn = function(event, message, callback) {
   let text = message.text ? message.text : message.attachment.payload.text
-  senderActions.typingOn(event.sender.id, () => {
+  typingOn(event.sender.id, () => {
     let millisPerWord = (60 * 1000) / 450
     let delay = text.split(' ').length * millisPerWord
     setTimeout(callback, delay)
