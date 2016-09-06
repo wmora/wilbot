@@ -16,7 +16,7 @@ function handlePayload(event, messages) {
   let message = messages.shift()
 
   if (message !== undefined) {
-    messenger.sendMessage(event, message, () => {
+    messenger.sendMessage(event.sender, message, () => {
       handlePayload(event, messages)
     })
   }
