@@ -10,7 +10,7 @@ const getStarted = [
     required_user_fields: [
       'first_name'
     ],
-    text: 'Hi ${first_name}! I\'m Wilbot, Will\'s personal bot'
+    text: 'Hi ##first_name##! I\'m Wilbot, Will\'s personal bot'
   },
   {
     text: 'I can tell you a bit about his work, education, and personal life'
