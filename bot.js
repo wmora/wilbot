@@ -22,9 +22,10 @@ app.post('/webhook', function(request, response) {
   let body = request.body
 
   if (body && body.object === 'page' && body.entry) {
-    senderActions.markAsSeen(event.sender.id)
+
     for (let entry of body.entry) {
       for (let event of entry.messaging) {
+        senderActions.markAsSeen(event.sender.id)
         if (event.postback) {
           postback.handle(event)
         }
