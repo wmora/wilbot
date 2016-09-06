@@ -33,7 +33,7 @@ function sendMessage(event, message, callback) {
 }
 
 function sendTypingOn(event, message, callback) {
-  let text = message.text ? message.text : message.attachment.text
+  let text = message.text ? message.text : message.attachment.payload.text
   senderActions.typingOn(event.sender.id, () => {
     let millisPerWord = (60 * 1000) / 600
     let delay = text.split(' ').length * millisPerWord
