@@ -123,12 +123,12 @@ const work4 = [
          buttons: [
            {
              type: 'postback',
-             title: 'Contact Will',
+             title: 'Contact',
              payload: 'contact'
            },
            {
              type: 'postback',
-             title: 'More about Will',
+             title: '🏠',
              payload: 'home'
            }
          ]

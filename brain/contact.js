@@ -28,7 +28,7 @@ const contact = [
         buttons: [
           {
             type: 'postback',
-            title: 'More about Will',
+            title: '🏠',
             payload: 'home'
           }
         ]

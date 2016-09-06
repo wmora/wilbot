@@ -59,7 +59,7 @@ const personalLife2 = [
 
 const personalLife3 = [
   {
-    text: 'As you probably noticed, I\'m passionate about technology and I\'m always working on side projects. To me, it\'s the best way to keep learning'
+    text: 'I\'m passionate about technology and I\'m always working on side projects. To me, it\'s the best way to keep learning'
   },
   {
     text: 'I also enjoy exercising (mostly running), reading, movies, music, writing, and video games'
@@ -73,12 +73,12 @@ const personalLife3 = [
         buttons: [
           {
             type: 'postback',
-            title: 'Contact Will',
+            title: 'Contact',
             payload: 'contact'
           },
           {
             type: 'postback',
-            title: 'More about Will',
+            title: '🏠',
             payload: 'home'
           }
         ]

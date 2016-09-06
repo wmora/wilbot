@@ -77,7 +77,7 @@ const home2 = [
           },
           {
             type: 'postback',
-            title: 'Contact Will',
+            title: 'Contact',
             payload: 'contact'
           }
         ]
