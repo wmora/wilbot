@@ -25,10 +25,11 @@ app.post('/webhook', function(request, response) {
 
     for (let entry of body.entry) {
       for (let event of entry.messaging) {
-        senderActions.markAsSeen(event.sender.id)
-        if (event.postback) {
-          postback.handle(event)
-        }
+        senderActions.markAsSeen(event.sender.id, () => {
+          if (event.postback) {
+            postback.handle(event)
+          }
+        })        
       }
     }
     response.sendStatus(200)
