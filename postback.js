@@ -35,8 +35,7 @@ function sendMessage(event, message, callback) {
 function sendTypingOn(event, message, callback) {
   let text = message.text ? message.text : message.attachment.text
   senderActions.typingOn(event.sender.id, () => {
-    // According to http://10fastfingers.com/typing-test/english I type 39 words/min :P
-    let millisPerWord = (60 * 1000) / 39
+    let millisPerWord = (60 * 1000) / 600
     let delay = text.split(' ').length * millisPerWord
     setTimeout(callback, delay)
   })
