@@ -1,7 +1,8 @@
 'use strict'
 
-const facebook = require('./facebook.js')
-const brain = require('./brain/brain.js')
+const facebook = require('./facebook.js'),
+      brain = require('./brain/brain.js'),
+      senderActions = require('./sender_actions.js')
 
 exports.handle = function(event) {
   let payload = event.postback.payload
