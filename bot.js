@@ -3,7 +3,8 @@
 const express = require('express'),
   bodyParser = require('body-parser'),
   validator = require('./validator.js'),
-  postback = require('./postback.js')
+  postback = require('./postback.js'),
+  senderActions = require('./sender_actions.js')
 const app = express()
 
 app.use(bodyParser.json())
@@ -21,6 +22,7 @@ app.post('/webhook', function(request, response) {
   let body = request.body
 
   if (body && body.object === 'page' && body.entry) {
+    senderActions.markAsSeen(event.sender.id)
     for (let entry of body.entry) {
       for (let event of entry.messaging) {
         if (event.postback) {
