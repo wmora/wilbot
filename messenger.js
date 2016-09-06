@@ -35,8 +35,8 @@ function getMessageText(recipient, message, callback) {
         let replace = new RegExp(placeholder, 'g');
         let replaceText = user[user_field] !== undefined ? ` ${user[user_field]}` : ''
         message.text = message.text.replace(replace, replaceText)
-        callback(message.text)
       }
+      callback(message.text)
     })
   } else {
     callback(message.text)
