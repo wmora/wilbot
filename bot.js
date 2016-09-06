@@ -3,9 +3,9 @@
 const express = require('express'),
   bodyParser = require('body-parser'),
   validator = require('./validator.js'),
-  postback = require('./postback.js'),
-  senderActions = require('./sender_actions.js'),
-  message = require('./message.js')
+  postback = require('./webhook/postback.js'),
+  senderActions = require('./webhook/sender_actions.js'),
+  message = require('./webhook/message.js')
 const app = express()
 
 app.use(bodyParser.json())
@@ -26,7 +26,7 @@ app.post('/webhook', function(request, response) {
 
     for (let entry of body.entry) {
       for (let event of entry.messaging) {
-        senderActions.markAsSeen(event.sender.id, () => {
+        senderActions.markAsSeen(event.sender, () => {
           if (event.postback) {
             postback.handle(event)
           } else if (event.message) {
