@@ -36,7 +36,7 @@ const work2 = [
       type: 'template',
       payload: {
         template_type: 'button',
-        text: 'before that I worked at a Montreal startup called Walking Thumbs developing a messaging platform for Android',
+        text: 'before that I worked at a Montreal startup called Walking Thumbs developing a messaging app for Android',
         buttons: [
           {
             type: 'postback',
