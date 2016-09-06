@@ -14,7 +14,10 @@ exports.verify_token = process.env.VERIFY_TOKEN || ''
 exports.getUserInfo = function(userId, fields, callback) {
   let options = {
     hostname: settings.hostname,
-    path: `${settings.base_path}${userId}?fields=${fields.join('&')}&access_token=${access_token}`
+    path: `${settings.base_path}${userId}?fields=${fields.join('&')}&access_token=${access_token}`,
+    headers: {
+      'Content-Type': 'application/json'
+    }
   }
   let request = https.request(options, (response) => {
     if (response.statusCode >= 400 && response.statusCode <= 599) {
