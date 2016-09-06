@@ -12,7 +12,7 @@ const work = [
       type: 'template',
       payload: {
         template_type: 'button',
-        text: '(although 🤖s are pretty cool, maybe I should do more 🤔)',
+        text: 'although 🤖s are pretty cool, maybe I should do more 🤔',
         buttons: [
           {
             type: 'postback',
