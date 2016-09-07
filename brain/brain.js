@@ -39,7 +39,7 @@ const home = [
       type: 'template',
       payload: {
         template_type: 'button',
-        text: 'What would you like to know about me?',
+        text: 'What would you like to know about?',
         buttons: [
           {
             type: 'postback',
@@ -68,7 +68,7 @@ const home2 = [
       type: 'template',
       payload: {
         template_type: 'button',
-        text: 'What would you like to know about me?',
+        text: 'What would you like to know about?',
         buttons: [
           {
             type: 'postback',
