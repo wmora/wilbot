@@ -6,6 +6,8 @@ Talk to WilBot! Use the messenger code below or follow [this link](https://m.me/
 
 <img src="art/messenger_code_600.png" width=300 />
 
+All robot images were lovingly created by [robohash.org]('http://robohash.org')
+
 ## Project Setup
 There are two env variables that should be set before starting the process: PAGE_ACCESS_TOKEN and VERIFY_TOKEN. You get both values from Facebook's developers console. If you don't set them, your calls to Facebook's API will fail. To run the project for the first time, execute:
 ```
@@ -26,9 +28,9 @@ $ ./create_get_started.sh my_page_access_token
 Note that the payload `'get_started'` is defined by me and part of the payloads supported in the project
 
 ## Project overview
-The project is an express app (see [`bot.js`]('bot.js')) that supports the `GET` and `POST` methods for the `'/webhook'` path. Anytime we receive an event from Facebook, it sends a [`sender_action`](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) to mark the message as read and then it will determine if it is a [`message`](https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received) or a [`postback`](https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback-received) and handle it accordingly.
+The project is an express app (see [`bot.js`](bot.js)) that supports the `GET` and `POST` methods for the `'/webhook'` path. Anytime we receive an event from Facebook, it sends a [`sender_action`](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) to mark the message as read and then it will determine if it is a [`message`](https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-received) or a [`postback`](https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback-received) and handle it accordingly.
 
-The [`brain`]('brain') folder has all the payloads supported by the bot as well as the sequence of messages that should be sent for each payload.
+The [`brain`](brain) folder has all the payloads supported by the bot as well as the sequence of messages that should be sent for each payload.
 
 You can follow the code if you want more detail.
 
