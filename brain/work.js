@@ -29,7 +29,7 @@ const work = [
 
 const work2 = [
   {
-    text: 'I currently work at Smooch.io, a cloud messaging platform that offers a multi-channel messaging solution for your customers'
+    text: 'I recently joined Smooch.io, a cloud messaging platform that offers a multi-channel messaging solution for your customers'
   },
   {
     attachment: {
