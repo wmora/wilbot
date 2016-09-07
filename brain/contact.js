@@ -8,7 +8,7 @@ const contact = [
     text: 'we can also connect through social media'
   },
   {
-    text: 'Facebook: https://www.facebook.com/william.r.mora\nTwitter: https://twitter.com/_williammora\nGitHub: https://github.com/wmora\nLinkedIn: https://www.linkedin.com/in/williammora'
+    text: 'Facebook: https://www.facebook.com/william.r.mora\n\nTwitter: https://twitter.com/_williammora\n\nGitHub: https://github.com/wmora\n\nLinkedIn: https://www.linkedin.com/in/williammora'
   },
   {
     attachment: {
