@@ -9,7 +9,7 @@ Talk to WilBot! Use the messenger code below or follow [this link](https://m.me/
 All robot images were lovingly created by [robohash.org]('http://robohash.org')
 
 ## Project Setup
-There are two env variables that should be set before starting the process: PAGE_ACCESS_TOKEN and VERIFY_TOKEN. You get both values from Facebook's developers console. If you don't set them, your calls to Facebook's API will fail. To run the project for the first time, execute:
+There are two env variables that should be set before starting the process: PAGE_ACCESS_TOKEN and VERIFY_TOKEN. You get both values from Facebook's developers console. If you don't set them, your calls to Facebook's API will fail. To run the project for the first time, do:
 ```
 $ npm install
 $ npm start
@@ -17,11 +17,11 @@ $ npm start
 ## Bot Setup
 Follow the official [documentation](https://developers.facebook.com/docs/messenger-platform/complete-guide) for setting up your bot. This project also includes two scripts that are part of the setup:
 
-* `create_greeting.sh`: Sets the greeting text that users see when they first discover your bot. To run it, you must pass your page access token as a parameter. Ex:
+* `create_greeting.sh`: Sets the greeting text that users see when they first discover your bot. To run it, you must pass your page access token as an argument. Ex:
 ```
 $ ./create_greeting.sh my_page_access_token
 ```
-* `create_get_started.sh`: Sets the 'Get Started' button that users see the first time they interact with your bot. You must also pass your page access token as a parameter. Ex:
+* `create_get_started.sh`: Sets the 'Get Started' button that users see the first time they interact with your bot. You must also pass your page access token as an argument. Ex:
 ```
 $ ./create_get_started.sh my_page_access_token
 ```
