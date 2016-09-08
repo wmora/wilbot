@@ -5,7 +5,8 @@
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "test": "./node_modules/mocha/bin/mocha --recursive"
+    "test": "mocha --recursive",
+    "coverage": "istanbul cover _mocha -- --recursive"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,7 @@
     "body-parser": "1.15.2"
   },
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "mocha": "2.4.x",
     "should": "*",
     "sinon": "1.17.x"
