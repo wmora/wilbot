@@ -4,11 +4,14 @@ const facebook = require('./facebook.js'),
       senderActions = require('./webhook/sender_actions.js')
 
 exports.sendMessage = function(recipient, message, callback) {
-  senderActions.sendTypingOn(recipient, message, () => {
+  senderActions.typingOn(recipient, () => {
+    let text = message.text ? message.text : message.attachment.payload.text
+    let millisPerCharacter = (60 * 1000) / 1500
+    let delay = text.length * millisPerCharacter
     if (message.text) {
-      sendTextMessage(recipient, message, callback)
+      setTimeout(sendTextMessage(recipient, message, callback), delay)
     } else if (message.attachment) {
-      sendAttachmentMessage(recipient, message, callback)
+      setTimeout(sendAttachmentMessage(recipient, message, callback), delay)
     }
   })
 }
