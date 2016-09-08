@@ -5,7 +5,7 @@
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "devDependencies": {
     "mocha": "2.4.x",
-    "should": "*"
+    "should": "*",
+    "sinon": "1.17.x"
   },
   "keywords": [
     "bot",
