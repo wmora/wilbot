@@ -1,5 +1,7 @@
 # WilBot
 
+[![Build Status](https://travis-ci.org/wmora/wilbot.svg?branch=master)](https://travis-ci.org/wmora/wilbot)
+
 WilBot is my personal bot for Facebook Messenger. It can be used as a starting point for your own personal bots 🤖🤖
 
 Talk to WilBot! Use the messenger code below or follow [this link](https://m.me/williammorabot)
