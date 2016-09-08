@@ -13,8 +13,8 @@ exports.markAsSeen = function(recipient, callback) {
 exports.sendTypingOn = function(recipient, message, callback) {
   let text = message.text ? message.text : message.attachment.payload.text
   typingOn(recipient, () => {
-    let millisPerWord = (60 * 1000) / 450
-    let delay = text.split(' ').length * millisPerWord
+    let millisPerCharacter = (60 * 1000) / 313
+    let delay = text.length * millisPerWord
     setTimeout(callback, delay)
   })
 }
