@@ -1,7 +1,7 @@
 'use strict'
 
 const facebook = require('./facebook.js'),
-      senderActions = require('./webhook/sender_actions.js')
+      senderActions = require('./sender_actions.js')
 
 exports.sendMessage = function(recipient, message, callback) {
   senderActions.typingOn(recipient, () => {

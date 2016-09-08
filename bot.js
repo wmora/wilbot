@@ -4,7 +4,7 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   validator = require('./validator.js'),
   postback = require('./webhook/postback.js'),
-  senderActions = require('./webhook/sender_actions.js'),
+  senderActions = require('./sender_actions.js'),
   message = require('./webhook/message.js')
 const app = express()
 

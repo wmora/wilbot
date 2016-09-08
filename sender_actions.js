@@ -1,6 +1,6 @@
 'use strict'
 
-const facebook = require('../facebook.js')
+const facebook = require('./facebook.js')
 
 exports.markAsSeen = function(recipient, callback) {
   let body = {

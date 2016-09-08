@@ -2,8 +2,8 @@
 
 const should = require('should'),
       sinon = require('sinon'),
-      senderActions = require('../../webhook/sender_actions.js'),
-      facebook = require('../../facebook.js')
+      senderActions = require('../sender_actions.js'),
+      facebook = require('../facebook.js')
 describe('sender_actions', () => {
   describe('markAsSeen', () => {
     let facebookMock

@@ -4,7 +4,7 @@ const should = require('should'),
       sinon = require('sinon'),
       messenger = require('../messenger.js'),
       facebook = require('../facebook.js'),
-      senderActions = require('../webhook/sender_actions.js')
+      senderActions = require('../sender_actions.js')
 
 describe('messenger', () => {
   describe('sendMessage', () => {
