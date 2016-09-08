@@ -14,7 +14,7 @@ exports.sendTypingOn = function(recipient, message, callback) {
   let text = message.text ? message.text : message.attachment.payload.text
   typingOn(recipient, () => {
     let millisPerCharacter = (60 * 1000) / 313
-    let delay = text.length * millisPerWord
+    let delay = text.length * millisPerCharacter
     setTimeout(callback, delay)
   })
 }
