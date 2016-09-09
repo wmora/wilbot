@@ -1,23 +1,24 @@
 'use strict'
 
 const facebook = require('./facebook.js'),
-      senderActions = require('./sender_actions.js')
+      senderActions = require('./sender_actions.js'),
+      messageUtils = require('./message_utils.js')
 
 exports.sendMessage = function(recipient, message, callback) {
   senderActions.typingOn(recipient, () => {
     let isTextMessage = message.text
     let isAttachmentMessage = message.attachment
     let text = isTextMessage ? message.text : message.attachment.payload.text
-    let millisPerCharacter = (60 * 1000) / 1500
-    let delay = text.length * millisPerCharacter
-    let sendMessageFunction = () => {
-      if (isTextMessage) {
-        sendTextMessage(recipient, message, callback)
-      } else if (isAttachmentMessage) {
-        sendAttachmentMessage(recipient, message, callback)
+    messageUtils.calculateMessageDelay(text, (delay) => {
+      let sendMessageFunction = () => {
+        if (isTextMessage) {
+          sendTextMessage(recipient, message, callback)
+        } else if (isAttachmentMessage) {
+          sendAttachmentMessage(recipient, message, callback)
+        }
       }
-    }
-    setTimeout(sendMessageFunction, delay)
+      setTimeout(sendMessageFunction, delay)
+    })
   })
 }
 

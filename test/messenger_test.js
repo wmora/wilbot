@@ -4,17 +4,25 @@ const should = require('should'),
       sinon = require('sinon'),
       messenger = require('../messenger.js'),
       facebook = require('../facebook.js'),
-      senderActions = require('../sender_actions.js')
+      senderActions = require('../sender_actions.js'),
+      messageUtils = require('../message_utils.js')
 
 describe('messenger', () => {
   describe('sendMessage', () => {
     let message
     let facebookMock
     let senderActionsMock
+    let messageUtilsMock
+    beforeEach(() => {
+      messageUtilsMock = sinon.stub(messageUtils, 'calculateMessageDelay', (text, callback) => {
+        callback(0)
+      })
+    })
     afterEach(() => {
       message = {}
       facebookMock.restore()
       senderActionsMock.restore()
+      messageUtilsMock.restore()
     })
     it('should send a \'typing_on\' message before sending a message to facebook', (done) => {
       message = {
