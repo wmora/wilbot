@@ -87,5 +87,92 @@ describe('messenger', () => {
         done()
       })
     })
+    it('should format a message if it contains required_user_fields', (done) => {
+      let message = {
+        recipient: {
+          id: 'recipient_id'
+        },
+        required_user_fields: [
+          'first_name'
+        ],
+        text: 'Hi ##first_name##!'
+      }
+      let userInfoMock = sinon.stub(facebook, 'getUserInfo', (recipientId, required_user_fields, callback) => {
+        required_user_fields.should.equal(message.required_user_fields)
+        callback({first_name: 'Wilbot'})
+      })
+      facebookMock = sinon.stub(facebook, 'sendMessage', (body, callback) => {
+        body.message.text.should.equal('Hi Wilbot!')
+        callback()
+      })
+      senderActionsMock = sinon.stub(senderActions, 'typingOn', (recipient, callback) => {
+        callback()
+      })
+      messenger.sendMessage({}, message, () => {
+        senderActionsMock.calledOnce.should.be.ok()
+        facebookMock.calledOnce.should.be.ok()
+        userInfoMock.calledOnce.should.be.ok()
+        userInfoMock.restore()
+        done()
+      })
+    })
+    it('should use an empty character as a fallback if getUserInfo fails', (done) => {
+      let message = {
+        recipient: {
+          id: 'recipient_id'
+        },
+        required_user_fields: [
+          'first_name'
+        ],
+        text: 'Hi ##first_name##!'
+      }
+      let userInfoMock = sinon.stub(facebook, 'getUserInfo', (recipientId, required_user_fields, callback) => {
+        required_user_fields.should.equal(message.required_user_fields)
+        callback({})
+      })
+      facebookMock = sinon.stub(facebook, 'sendMessage', (body, callback) => {
+        body.message.text.should.equal('Hi!')
+        callback()
+      })
+      senderActionsMock = sinon.stub(senderActions, 'typingOn', (recipient, callback) => {
+        callback()
+      })
+      messenger.sendMessage({}, message, () => {
+        senderActionsMock.calledOnce.should.be.ok()
+        facebookMock.calledOnce.should.be.ok()
+        userInfoMock.calledOnce.should.be.ok()
+        userInfoMock.restore()
+        done()
+      })
+    })
+    it('should use an empty character as a fallback if field names do not match', (done) => {
+      let message = {
+        recipient: {
+          id: 'recipient_id'
+        },
+        required_user_fields: [
+          'first_name'
+        ],
+        text: 'Hi ##first_name##!'
+      }
+      let userInfoMock = sinon.stub(facebook, 'getUserInfo', (recipientId, required_user_fields, callback) => {
+        required_user_fields.should.equal(message.required_user_fields)
+        callback({last_name: 'WilBot'})
+      })
+      facebookMock = sinon.stub(facebook, 'sendMessage', (body, callback) => {
+        body.message.text.should.equal('Hi!')
+        callback()
+      })
+      senderActionsMock = sinon.stub(senderActions, 'typingOn', (recipient, callback) => {
+        callback()
+      })
+      messenger.sendMessage({}, message, () => {
+        senderActionsMock.calledOnce.should.be.ok()
+        facebookMock.calledOnce.should.be.ok()
+        userInfoMock.calledOnce.should.be.ok()
+        userInfoMock.restore()
+        done()
+      })
+    })
   })
 })
