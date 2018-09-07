@@ -3,8 +3,8 @@
 const https = require('https')
 
 const settings = {
-    hostname: 'graph.facebook.com',
-    base_path: '/v2.6/'
+  hostname: 'graph.facebook.com',
+  base_path: '/v3.1/'
 }
 
 const access_token = process.env.PAGE_ACCESS_TOKEN || ''
